@@ -57,36 +57,36 @@ function playGame() {
 
         if (humanChoice === "rock" && computerChoice === "scissors") {
             humanScore++;
-            return "You win! Rock beats scissors!";
+            return alert("You win! Rock beats scissors!");
         }
 
         else if (humanChoice === "paper" && computerChoice === "rock") {
             humanScore++;
-            return "You win! Paper beats rock!";
+            return alert("You win! Paper beats rock!");
         }
 
         else if (humanChoice === "scissors" && computerChoice === "paper") {
             humanScore++;
-            return "You win! Scissors beats paper!";
+            return alert("You win! Scissors beats paper!");
         }
 
         else if (computerChoice === "rock" && humanChoice === "scissors") {
             computerScore++;
-            return "You lose! Rock beats scissors!"
+            return alert("You lose! Rock beats scissors!");
         }
 
         else if (computerChoice === "paper" && humanChoice === "rock") {
             computerScore++;
-            return "You lose! Paper beats rock!"
+            return alert("You lose! Paper beats rock!");
         }
 
         else if (computerChoice === "scissors" && humanChoice === "paper") {
             computerScore++;
-            return "You lose! Scissors beats paper!"
+            return alert("You lose! Scissors beats paper!");
         }
 
         else {
-            return "It's a tie, try again!";
+            return alert("It's a tie, try again!");
         }
     }
 
