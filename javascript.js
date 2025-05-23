@@ -1,4 +1,4 @@
-console.log("Hello WORLD!");
+console.log("I decided to do the whole game through alerts... so there's nothing to see here :)");
 
 // Randomly will return "Rock" || "Paper" || "Scissors"
 function getComputerChoice() {
@@ -38,19 +38,17 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    console.log(humanChoice);
-
-    console.log(playRound(humanChoice, computerChoice));
+    playRound(humanChoice, computerChoice);
     alert("You: " + humanScore + " | Computer: " + computerScore);
-    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    playRound(getHumanChoice(), getComputerChoice());
     alert("You: " + humanScore + " | Computer: " + computerScore);
-    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    playRound(getHumanChoice(), getComputerChoice());
     alert("You: " + humanScore + " | Computer: " + computerScore);
-    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    playRound(getHumanChoice(), getComputerChoice());
     alert("You: " + humanScore + " | Computer: " + computerScore);
-    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    playRound(getHumanChoice(), getComputerChoice());
     alert("You: " + humanScore + " | Computer: " + computerScore);
-    alert("FINAL --> You: " + humanScore + " | Computer: " + computerScore);
+    endGame(humanScore, computerScore);
 
 //Allows for the playing and scoring of a round
     function playRound(humanChoice, computerChoice) {
@@ -88,6 +86,20 @@ function playGame() {
         else {
             return alert("It's a tie, try again!");
         }
+    }
+
+    // Calls the final score of the 5 rounds
+    function endGame(humanScore, computerScore) {
+        if (humanScore > computerScore) {
+            return alert("You won the game!");
+        }
+        else if (computerScore > humanScore) {
+            return alert("You lost the game!");
+        }
+        else if (computerScore === humanScore) {
+            return alert("Tie game!");
+        }
+
     }
 
 }
