@@ -127,17 +127,27 @@ scissorsButton.id = "scissorsButton";
 scissorsButton.textContent = "Select scissors!"
 document.body.appendChild(scissorsButton);
 
+// Scoring div creation
+const scoringDiv = document.createElement('div');
+scoringDiv.id = "scoringDiv";
+document.body.appendChild(scoringDiv);
+
 // Button event listeners
 rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice())
+    scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
+    console.log(humanScore);
+    console.log(computerScore);
 });
 
 paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice())
+    scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
 });
 
 scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice())
+    scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
 });
 
 // playGame();
