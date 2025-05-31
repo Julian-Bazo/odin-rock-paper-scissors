@@ -1,5 +1,3 @@
-console.log("I decided to do the whole game through alerts... so there's nothing to see here :)");
-
 // Randomly will return "Rock" || "Paper" || "Scissors" and set it as the computer's choice
 function getComputerChoice() {
     let selector = Math.random();
@@ -118,6 +116,12 @@ function reportScore(humanScore, computerScore) {
 const buttonDiv = document.createElement("div");
 buttonDiv.id = "buttonDiv";
 document.body.appendChild(buttonDiv);
+
+// Announcer div creation
+const announcerDiv = document.createElement("div");
+announcerDiv.id= "announcerDiv";
+document.body.appendChild(announcerDiv);
+announcerDiv.textContent = "Press a button to start the game!\nFirst to 5 points wins!";
 
 // Rock button creation
 const rockButton = document.createElement("button");
