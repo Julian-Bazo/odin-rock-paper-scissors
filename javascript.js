@@ -86,15 +86,23 @@ function playRound(humanChoice, computerChoice) {
 
 // Reports the final score of the game and says who won
 function endGame(humanScore, computerScore) {
-    if (humanScore > computerScore) {
-        return alert(`You won the game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
+
+    if (humanScore === 5 || computerScore === 5) {
+        buttonDiv.style.display = "none";
+        let winLose = "";
+        (humanScore === 5) ? winLose = "You Win!" : winLose = "You Lose!";
+        scoringDiv.textContent = `FINAL Score: You ${humanScore} | Computer ${computerScore}\n\n${winLose}`
+        
     }
-    else if (computerScore > humanScore) {
-        return alert(`You lost the game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
-    }
-    else if (computerScore === humanScore) {
-        return alert(`Tie game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
-    }
+    // if (humanScore > computerScore) {
+    //     return alert(`You won the game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
+    // }
+    // else if (computerScore > humanScore) {
+    //     return alert(`You lost the game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
+    // }
+    // else if (computerScore === humanScore) {
+    //     return alert(`Tie game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
+    // }
 
 }
 
@@ -142,16 +150,19 @@ scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
 rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice())
     updateScore();
+    endGame(humanScore, computerScore);
 });
 
 paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice())
     updateScore();
+    endGame(humanScore, computerScore);
 });
 
 scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice())
     updateScore();
+    endGame(humanScore, computerScore);
 });
 
 // Scoring div implementation function
