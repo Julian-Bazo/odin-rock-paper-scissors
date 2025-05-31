@@ -30,79 +30,79 @@ function getHumanChoice() {
 
 // let humanChoice = getHumanChoice();
 let computerChoice = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
 
-// Allows for the scoring of multiple back-to-back rounds. Ends when a score reaches 5.
+// Allows for the scoring of multiple back-to-back rounds. Ends when 5 rounds have been played.
 function playGame() {
+    playRound(humanChoice, computerChoice);
+    reportScore(humanScore, computerScore)
+    playRound(getHumanChoice(), getComputerChoice());
+    reportScore(humanScore, computerScore)
+    playRound(getHumanChoice(), getComputerChoice());
+    reportScore(humanScore, computerScore)
+    playRound(getHumanChoice(), getComputerChoice());
+    reportScore(humanScore, computerScore)
+    playRound(getHumanChoice(), getComputerChoice());
+    endGame(humanScore, computerScore)
+}
 
-//Initializes scoring mechanism integers
-    let humanScore = 0;
-    let computerScore = 0;
+// Allows for the playing and scoring of a round
+function playRound(humanChoice, computerChoice) {
 
-    // playRound(humanChoice, computerChoice);
-    // alert("You: " + humanScore + " | Computer: " + computerScore);
-    // playRound(getHumanChoice(), getComputerChoice());
-    // alert("You: " + humanScore + " | Computer: " + computerScore);
-    // playRound(getHumanChoice(), getComputerChoice());
-    // alert("You: " + humanScore + " | Computer: " + computerScore);
-    // playRound(getHumanChoice(), getComputerChoice());
-    // alert("You: " + humanScore + " | Computer: " + computerScore);
-    // playRound(getHumanChoice(), getComputerChoice());
-    // alert("You: " + humanScore + " | Computer: " + computerScore);
-    // endGame(humanScore, computerScore);
-
-//Allows for the playing and scoring of a round
-    function playRound(humanChoice, computerChoice) {
-
-        if (humanChoice === "rock" && computerChoice === "scissors") {
+    if (humanChoice === "rock" && computerChoice === "scissors") {
             humanScore++;
             return alert("You win! Rock beats scissors!");
-        }
-
-        else if (humanChoice === "paper" && computerChoice === "rock") {
-            humanScore++;
-            return alert("You win! Paper beats rock!");
-        }
-
-        else if (humanChoice === "scissors" && computerChoice === "paper") {
-            humanScore++;
-            return alert("You win! Scissors beats paper!");
-        }
-
-        else if (computerChoice === "rock" && humanChoice === "scissors") {
-            computerScore++;
-            return alert("You lose! Rock beats scissors!");
-        }
-
-        else if (computerChoice === "paper" && humanChoice === "rock") {
-            computerScore++;
-            return alert("You lose! Paper beats rock!");
-        }
-
-        else if (computerChoice === "scissors" && humanChoice === "paper") {
-            computerScore++;
-            return alert("You lose! Scissors beats paper!");
-        }
-
-        else {
-            return alert("It's a tie, try again!");
-        }
     }
 
-    // Calls the final score of the 5 rounds
-    function endGame(humanScore, computerScore) {
-        if (humanScore > computerScore) {
-            return alert("You won the game!");
-        }
-        else if (computerScore > humanScore) {
-            return alert("You lost the game!");
-        }
-        else if (computerScore === humanScore) {
-            return alert("Tie game!");
-        }
+    else if (humanChoice === "paper" && computerChoice === "rock") {
+            humanScore++;
+            return alert("You win! Paper beats rock!");
+    }
 
+    else if (humanChoice === "scissors" && computerChoice === "paper") {
+            humanScore++;
+            return alert("You win! Scissors beats paper!");
+    }
+
+    else if (computerChoice === "rock" && humanChoice === "scissors") {
+            computerScore++;
+            return alert("You lose! Rock beats scissors!");
+    }
+
+    else if (computerChoice === "paper" && humanChoice === "rock") {
+            computerScore++;
+            return alert("You lose! Paper beats rock!");
+    }
+
+    else if (computerChoice === "scissors" && humanChoice === "paper") {
+            computerScore++;
+            return alert("You lose! Scissors beats paper!");
+    }
+
+    else {
+            return alert("It's a tie, try again!");
+    }
+}
+
+// Reports the final score of the game and says who won
+function endGame(humanScore, computerScore) {
+    if (humanScore > computerScore) {
+        return alert(`You won the game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
+    }
+    else if (computerScore > humanScore) {
+        return alert(`You lost the game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
+    }
+    else if (computerScore === humanScore) {
+        return alert(`Tie game!\nFinal Score: You ${humanScore} | Computer ${computerScore}`);
     }
 
 }
+
+function reportScore(humanScore, computerScore) {
+    alert("You: " + humanScore + " | Computer: " + computerScore);
+}
+
 
 // Player selection button creation
 
