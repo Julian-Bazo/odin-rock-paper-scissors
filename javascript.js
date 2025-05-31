@@ -1,6 +1,6 @@
 console.log("I decided to do the whole game through alerts... so there's nothing to see here :)");
 
-// Randomly will return "Rock" || "Paper" || "Scissors"
+// Randomly will return "Rock" || "Paper" || "Scissors" and set it as the computer's choice
 function getComputerChoice() {
     let selector = Math.random();
     if (selector <= .33) {
@@ -14,7 +14,7 @@ function getComputerChoice() {
     }
 }
 
-// Returns a valid choice based off of user input
+// Returns a valid choice based off of user input to use as the human's choice
 function getHumanChoice() {
     let choice = prompt("Rock, paper, or scissors?","");
     choice = choice.toLowerCase(choice);
@@ -26,8 +26,7 @@ function getHumanChoice() {
     }
 }
 
-
-
+// Initializes all the global variables needed to run the functions below
 // let humanChoice = getHumanChoice();
 let computerChoice = getComputerChoice();
 let humanScore = 0;
@@ -99,6 +98,7 @@ function endGame(humanScore, computerScore) {
 
 }
 
+// Reports the current score in-between rounds
 function reportScore(humanScore, computerScore) {
     alert("You: " + humanScore + " | Computer: " + computerScore);
 }
@@ -127,6 +127,18 @@ scissorsButton.id = "scissorsButton";
 scissorsButton.textContent = "Select scissors!"
 document.body.appendChild(scissorsButton);
 
+// Button event listeners
+rockButton.addEventListener("click", () => {
+    playRound("rock", getComputerChoice())
+});
+
+paperButton.addEventListener("click", () => {
+    playRound("paper", getComputerChoice())
+});
+
+scissorsButton.addEventListener("click", () => {
+    playRound("scissors", getComputerChoice())
+});
 
 // playGame();
 // console.log(playRound(humanChoice, computerChoice));
