@@ -28,7 +28,7 @@ function getHumanChoice() {
 
 
 
-let humanChoice = getHumanChoice();
+// let humanChoice = getHumanChoice();
 let computerChoice = getComputerChoice();
 
 // Allows for the scoring of multiple back-to-back rounds. Ends when a score reaches 5.
@@ -38,17 +38,17 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    playRound(humanChoice, computerChoice);
-    alert("You: " + humanScore + " | Computer: " + computerScore);
-    playRound(getHumanChoice(), getComputerChoice());
-    alert("You: " + humanScore + " | Computer: " + computerScore);
-    playRound(getHumanChoice(), getComputerChoice());
-    alert("You: " + humanScore + " | Computer: " + computerScore);
-    playRound(getHumanChoice(), getComputerChoice());
-    alert("You: " + humanScore + " | Computer: " + computerScore);
-    playRound(getHumanChoice(), getComputerChoice());
-    alert("You: " + humanScore + " | Computer: " + computerScore);
-    endGame(humanScore, computerScore);
+    // playRound(humanChoice, computerChoice);
+    // alert("You: " + humanScore + " | Computer: " + computerScore);
+    // playRound(getHumanChoice(), getComputerChoice());
+    // alert("You: " + humanScore + " | Computer: " + computerScore);
+    // playRound(getHumanChoice(), getComputerChoice());
+    // alert("You: " + humanScore + " | Computer: " + computerScore);
+    // playRound(getHumanChoice(), getComputerChoice());
+    // alert("You: " + humanScore + " | Computer: " + computerScore);
+    // playRound(getHumanChoice(), getComputerChoice());
+    // alert("You: " + humanScore + " | Computer: " + computerScore);
+    // endGame(humanScore, computerScore);
 
 //Allows for the playing and scoring of a round
     function playRound(humanChoice, computerChoice) {
@@ -104,6 +104,30 @@ function playGame() {
 
 }
 
-playGame();
+// Player selection button creation
+
+// Rock button creation
+const rockButton = document.createElement("button");
+rockButton.classList.add("selection-button");
+rockButton.id = "rockButton";
+rockButton.textContent = "Select Rock!"
+document.body.appendChild(rockButton);
+
+// Paper button creation
+const paperButton = document.createElement("button");
+paperButton.classList.add("selection-button");
+paperButton.id = "paperButton";
+paperButton.textContent = "Select Paper!"
+document.body.appendChild(paperButton);
+
+// Scissors button creation
+const scissorsButton = document.createElement("button");
+scissorsButton.classList.add("selection-button");
+scissorsButton.id = "scissorsButton";
+scissorsButton.textContent = "Select scissors!"
+document.body.appendChild(scissorsButton);
+
+
+// playGame();
 // console.log(playRound(humanChoice, computerChoice));
 // console.log("You: " + humanScore + " | Computer: " + computerScore);
