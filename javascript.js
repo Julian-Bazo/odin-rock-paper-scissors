@@ -106,50 +106,58 @@ function reportScore(humanScore, computerScore) {
 
 // Player selection button creation
 
+// Button div creation
+const buttonDiv = document.createElement("div");
+buttonDiv.id = "buttonDiv";
+document.body.appendChild(buttonDiv);
+
 // Rock button creation
 const rockButton = document.createElement("button");
 rockButton.classList.add("selection-button");
 rockButton.id = "rockButton";
 rockButton.textContent = "Select Rock!"
-document.body.appendChild(rockButton);
+buttonDiv.appendChild(rockButton);
 
 // Paper button creation
 const paperButton = document.createElement("button");
 paperButton.classList.add("selection-button");
 paperButton.id = "paperButton";
 paperButton.textContent = "Select Paper!"
-document.body.appendChild(paperButton);
+buttonDiv.appendChild(paperButton);
 
 // Scissors button creation
 const scissorsButton = document.createElement("button");
 scissorsButton.classList.add("selection-button");
 scissorsButton.id = "scissorsButton";
 scissorsButton.textContent = "Select scissors!"
-document.body.appendChild(scissorsButton);
+buttonDiv.appendChild(scissorsButton);
 
 // Scoring div creation
 const scoringDiv = document.createElement('div');
 scoringDiv.id = "scoringDiv";
 document.body.appendChild(scoringDiv);
+scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
 
 // Button event listeners
 rockButton.addEventListener("click", () => {
     playRound("rock", getComputerChoice())
-    scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
-    console.log(humanScore);
-    console.log(computerScore);
+    updateScore();
 });
 
 paperButton.addEventListener("click", () => {
     playRound("paper", getComputerChoice())
-    scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
+    updateScore();
 });
 
 scissorsButton.addEventListener("click", () => {
     playRound("scissors", getComputerChoice())
-    scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
+    updateScore();
 });
 
-// playGame();
-// console.log(playRound(humanChoice, computerChoice));
-// console.log("You: " + humanScore + " | Computer: " + computerScore);
+// Scoring div implementation function
+function updateScore() {
+    scoringDiv.textContent = `Score: You ${humanScore} | Computer ${computerScore}`;
+}
+
+let buttonsDesign = document.querySelectorAll("selection-button");
+buttonsDesign.style.color = "black";
