@@ -49,36 +49,36 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === "rock" && computerChoice === "scissors") {
             humanScore++;
-            return alert("You win! Rock beats scissors!");
+            return announcerDiv.textContent = "You win! Rock beats scissors!";
     }
 
     else if (humanChoice === "paper" && computerChoice === "rock") {
             humanScore++;
-            return alert("You win! Paper beats rock!");
+            return announcerDiv.textContent = "You win! Paper beats rock!";
     }
 
     else if (humanChoice === "scissors" && computerChoice === "paper") {
             humanScore++;
-            return alert("You win! Scissors beats paper!");
+            return announcerDiv.textContent = "You win! Scissors beats paper!";
     }
 
     else if (computerChoice === "rock" && humanChoice === "scissors") {
             computerScore++;
-            return alert("You lose! Rock beats scissors!");
+            return announcerDiv.textContent = "You lose! Rock beats scissors!";
     }
 
     else if (computerChoice === "paper" && humanChoice === "rock") {
             computerScore++;
-            return alert("You lose! Paper beats rock!");
+            return announcerDiv.textContent = "You lose! Paper beats rock!";
     }
 
     else if (computerChoice === "scissors" && humanChoice === "paper") {
             computerScore++;
-            return alert("You lose! Scissors beats paper!");
+            return announcerDiv.textContent = "You lose! Scissors beats paper!";
     }
 
     else {
-            return alert("It's a tie, try again!");
+            return announcerDiv.textContent = "It's a tie, try again!";
     }
 }
 
